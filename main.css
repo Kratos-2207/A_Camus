@@ -13,11 +13,25 @@
    POLICES IMPORTÉES
    ==================================== */
 
-/* Libre Baskerville pour les titres élégants */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 
-/* Crimson Text pour le corps de texte lisible */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+/* libre-baskerville-regular - latin--Titre */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/libre-baskerville-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* crimson-text-regular - latin--Texte */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/crimson-text-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 /* ====================================
    VARIABLES CSS : COULEURS DES SECTIONS
