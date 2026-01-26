@@ -10,7 +10,7 @@
 }
 
 /* ====================================
-   POLICES IMPORTÉES
+   POLICES
    ==================================== */
 
 
@@ -56,7 +56,7 @@
    ==================================== */
 
 body {
-    font-family: 'Crimson Text', serif;
+    font-family: 'Crimson Text', sans-serif;
     font-size: 18px;           /* Taille de base : 18px */
     line-height: 1.8;          /* Interligne confortable pour la lecture */
     color: var(--noir-texte);
@@ -65,7 +65,7 @@ body {
 
 /* Titres principaux (H1) */
 h1 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Libre Baskerville', sans-serif;
     font-size: 48px;           /* Taille H1 : 48px */
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -74,7 +74,7 @@ h1 {
 
 /* Titres secondaires (H2) */
 h2 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Libre Baskerville', sans-serif;
     font-size: 32px;           /* Taille H2 : 32px */
     font-weight: 700;
     margin-top: 2rem;
@@ -84,7 +84,7 @@ h2 {
 
 /* Titres tertiaires (H3) - pour usage futur */
 h3 {
-    font-family: 'Crimson Text', serif;
+    font-family: 'Crimson Text', sans-serif;
     font-size: 24px;           /* Taille H3 : 24px */
     font-weight: 700;
     margin-top: 1.5rem;
