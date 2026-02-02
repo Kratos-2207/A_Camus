@@ -129,10 +129,16 @@ header {
     z-index: 1000;
 }
 
-header h1 {
-    font-size: 32px;
+.nom {
+    font-family: 'Crimson Text', serif;
+    font-size: 60px;
+    text-align: left;
     margin: 0;
     color: var(--olive-biographie);
+
+}
+.visage {
+
 }
 
 /* ====================================
@@ -196,7 +202,7 @@ body.biographie h2 {
 .banniere-camus {
     width: 100%;
     height: 300px;
-    background-image: url('images/camus-banner.jpg'); /* Image à ajouter dans dossier images/ */
+    background-image: bandeau_sépia.webp;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -232,16 +238,16 @@ body.romans {
 
 /* MAIN ROMANS : Limitation à 1100px avec fond blanc central */
 body.romans main {
-    max-width: 1100px;          /* Limitation de largeur à 1100px */
-    margin: 0 auto;             /* Centrage horizontal - crée les marges noires */
-    padding: 0;                 /* Pas de padding horizontal pour rester à 1100px exact */
+    max-width: 1100px;              /* Limitation de largeur à 1100px */
+    margin: 0 auto;                 /* Centrage horizontal - crée les marges noires */
+    padding: 0;                     /* Pas de padding horizontal pour rester à 1100px exact */
     background-color: var(--blanc); /* Fond blanc pour le contenu */
 }
 
 /* Contenu de la section romans */
 .contenu-romans {
     background-color: var(--blanc);
-    padding: 3rem;              /* Padding interne pour le contenu */
+    padding: 3rem;                  /* Padding interne pour le contenu */
 }
 
 /* Introduction de la page romans */
