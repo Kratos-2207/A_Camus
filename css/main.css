@@ -120,34 +120,18 @@ blockquote cite {
    HEADER : EN-TÊTE DU SITE
    ==================================== */
 
-header {
-    background-color: var(--blanc);
-    padding: 1.5rem 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;                         /* Header fixe en haut lors du scroll */
-    top: 0;
-    z-index: 1000;
-}
+
 
 header {
-    position: relative;
-    background-color: var(--blanc);
-    padding: 0; /* Important : enlever le padding */
+    background-image: url("../Img/bandeau_sépia.webp");
+    background-size: cover;
+    padding: 1.5rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky; /* Header fixe en haut lors du scroll */
     top: 0;
     z-index: 1000;
-    width: 100%;
-    height: auto; /* Laisse l'image définir la hauteur */
+    height: 175px; /* Laisse l'image définir la hauteur */
 }
-
-    /* L'image bandeau_sépia.webp */
-    .img-bandeau {
-        width: 100%;
-        height: auto; /* Hauteur automatique pour garder les proportions */
-        display: block;
-        object-fit: cover;
-    }
 
     /* Le nom Albert Camus sur l'image */
     .nom {
@@ -160,6 +144,7 @@ header {
         font-size: 3rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
+
 
 /* ====================================
    MAIN : CONTENU PRINCIPAL
