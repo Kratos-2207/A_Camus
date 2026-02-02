@@ -3,10 +3,10 @@
    ==================================== */
 
 /* Suppression des marges et paddings par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
 }
 
 /* ====================================
@@ -124,22 +124,42 @@ header {
     background-color: var(--blanc);
     padding: 1.5rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;          /* Header fixe en haut lors du scroll */
+    position: sticky;                         /* Header fixe en haut lors du scroll */
     top: 0;
     z-index: 1000;
 }
 
-.nom {
-    font-family: 'Crimson Text', serif;
-    font-size: 60px;
-    text-align: left;
-    margin: 0;
-    color: var(--olive-biographie);
-
+header {
+    position: relative;
+    background-color: var(--blanc);
+    padding: 0; /* Important : enlever le padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Header fixe en haut lors du scroll */
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: auto; /* Laisse l'image définir la hauteur */
 }
-.visage {
 
-}
+    /* L'image bandeau_sépia.webp */
+    .img-bandeau {
+        width: 100%;
+        height: auto; /* Hauteur automatique pour garder les proportions */
+        display: block;
+        object-fit: cover;
+    }
+
+    /* Le nom Albert Camus sur l'image */
+    .nom {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        margin: 0;
+        color: #E8DCC4 ;
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
 
 /* ====================================
    MAIN : CONTENU PRINCIPAL
