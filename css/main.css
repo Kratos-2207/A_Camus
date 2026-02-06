@@ -305,3 +305,19 @@ body.romans footer {
     background-color: var(--noir-texte);
     margin: 0;                  /* Pas de marge pour coller aux bords */
 }
+
+/* Styling des liens email */
+a[href^="mailto:"] {
+    color: #6B5344;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a[href^="mailto:"]:hover {
+    color: #2C5F7C;
+    text-decoration: underline;
+}
+
+a[href^="mailto:"]:visited {
+    color: #6B5344;
+}
