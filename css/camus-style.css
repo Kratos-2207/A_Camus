@@ -1,0 +1,473 @@
+/* ============================================
+   VARIABLES ET CONFIGURATION GLOBALE
+   ============================================ */
+
+:root {
+    /* Palette de couleurs Camus */
+    --rouge-camus: #A63A3A;
+    --bleu-camus: #2C5F7C;
+    --brun-camus: #6B5344;
+    --vert-camus: #5A6B4A;
+    --beige-camus: #E8DCC4;
+    --noir-texte: #2C2C2C;
+    --gris-clair: #F5F5F5;
+    --blanc: #FFFFFF;
+
+    /* Typographie */
+    --font-title: 'Libre Baskerville', serif;
+    --font-body: 'Crimson Text', serif;
+}
+
+/* ============================================
+   RESET ET BASE
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--noir-texte);
+    background-color: var(--beige-camus);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
+/* ============================================
+   BANDEAU STICKY EN HAUT
+   ============================================ */
+.bandeau-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 280px;
+    z-index: 1001;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bandeau-sticky img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* AJOUTE CES LIGNES ICI ↓ */
+.bandeau-title {
+    position: absolute;
+    left: 3rem;
+    bottom: 2rem;
+    color: var(--beige-camus);
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    z-index: 1002;
+}
+
+/* ============================================
+   NAVIGATION HEADER
+   ============================================ */
+
+#main-header {
+    position: fixed;
+    top: 280px;
+    left: 0;
+    right: 0;
+    background: rgba(44, 44, 44, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.header-right h1 {
+    color: var(--beige-camus);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-btn {
+    background: var(--rouge-camus);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #8A2F2F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   GESTION DES SECTIONS
+   ============================================ */
+
+section {
+    display: none;
+    min-height: 100vh;
+    padding-top: 310px;
+}
+
+section.active-section {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   PAGE D'ACCUEIL - HERO
+   ============================================
+
+.hero {
+    text-align: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--brun-camus) 0%, var(--noir-texte) 100%);
+    color: var(--beige-camus);
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-style: italic;
+    opacity: 0.9;
+    font-weight: 400;
+}*/
+
+/* ============================================
+   MENU 3D - PILE DE LIVRES
+   ============================================ */
+
+.book-stack-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    min-height: 70vh;
+    padding: 0.5rem 2% 3rem 1rem;
+    perspective: 1500px;
+}
+
+.book-stack {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    transform-style: preserve-3d;
+}
+
+.book {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-style: preserve-3d;
+}
+
+/* Position des livres dans la pile */
+.book:nth-child(1) { bottom: 0; z-index: 5; }
+.book:nth-child(2) { bottom: 55px; z-index: 4; }
+.book:nth-child(3) { bottom: 110px; z-index: 3; }
+.book:nth-child(4) { bottom: 165px; z-index: 2; }
+.book:nth-child(5) { bottom: 220px; z-index: 1; }
+
+/* Tranche du livre */
+.book-spine {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent 10%, transparent 90%, rgba(0, 0, 0, 0.2));
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+            0 4px 6px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Flèche à gauche de la barre */
+.book-spine::before {
+    content: '◀';
+    position: absolute;
+    left: 20px;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.book:hover .book-spine::before {
+    left: 15px;
+    color: white;
+}
+
+.book-title {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.05em;
+}
+
+/* Couverture du livre qui s'ouvre à GAUCHE */
+.book-cover {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: 50%;
+    right: 100%;
+    transform: translate(0, -50%) rotateY(-90deg);
+    transform-origin: right center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.book-cover h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.book-cover ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.book-cover li {
+    padding: 0.4rem 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+.book-cover li:hover {
+    padding-left: 5px;
+    color: white;
+}
+
+.book-cover li:last-child {
+    border-bottom: none;
+}
+
+.book-cover p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Hover sur les livres */
+.book:hover {
+    transform: scale(1.02);
+    z-index: 200 !important;
+}
+
+.book:hover .book-cover {
+    transform: translate(0, -50%) rotateY(0deg);
+    opacity: 1;
+    pointer-events: all;
+    z-index: 200;
+}
+.book {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-style: preserve-3d;
+    isolation: isolate; /* Crée un nouveau contexte d'empilement */
+}
+
+/* Couleurs spécifiques par catégorie */
+.book-roman .book-spine { background-color: var(--rouge-camus); }
+.book-roman .book-cover { background: linear-gradient(135deg, var(--rouge-camus), #8A2F2F); }
+
+.book-essai .book-spine { background-color: var(--bleu-camus); }
+.book-essai .book-cover { background: linear-gradient(135deg, var(--bleu-camus), #1E4152); }
+
+.book-theatre .book-spine { background-color: var(--brun-camus); }
+.book-theatre .book-cover { background: linear-gradient(135deg, var(--brun-camus), #4A3A2E); }
+
+.book-recueil .book-spine { background-color: var(--vert-camus); }
+.book-recueil .book-cover { background: linear-gradient(135deg, var(--vert-camus), #3E4A32); }
+
+.book-biographie .book-spine { background-color: #8B7355; }
+.book-biographie .book-cover { background: linear-gradient(135deg, #8B7355, #6B5344); }
+
+/* ============================================
+   SECTIONS DE CONTENU
+   ============================================ */
+
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--blanc);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--noir-texte);
+    border-bottom: 3px solid var(--rouge-camus);
+    padding-bottom: 1rem;
+}
+
+/* Romans */
+#romans-section .section-title {
+    color: var(--rouge-camus);
+    border-color: var(--rouge-camus);
+}
+
+/* Essais */
+#essais-section .section-title {
+    color: var(--bleu-camus);
+    border-color: var(--bleu-camus);
+}
+
+/* Théâtre */
+#theatre-section .section-title {
+    color: var(--brun-camus);
+    border-color: var(--brun-camus);
+}
+
+/* Recueils */
+#recueils-section .section-title {
+    color: var(--vert-camus);
+    border-color: var(--vert-camus);
+}
+
+/* Biographie */
+#biographie-section .section-title {
+    color: #8B7355;
+    border-color: #8B7355;
+}
+
+/* ============================================
+   ARTICLES ET ŒUVRES
+   ============================================ */
+
+.work-detail {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--gris-clair);
+    border-radius: 8px;
+    border-left: 5px solid var(--rouge-camus);
+    transition: all 0.3s ease;
+}
+
+.work-detail:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#romans-section .work-detail { border-left-color: var(--rouge-camus); }
+#essais-section .work-detail { border-left-color: var(--bleu-camus); }
+#theatre-section .work-detail { border-left-color: var(--brun-camus); }
+#recueils-section .work-detail { border-left-color: var(--vert-camus); }
+#biographie-section .work-detail { border-left-color: #8B7355; }
+
+.work-detail h3 {
+    font-size: 2rem;
+    color: var(--noir-texte);
+    margin-bottom: 1rem;
+}
+
+.work-info {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.work-meta {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: var(--blanc);
+    border-radius: 5px;
+}
+
+.work-info p {
+    margin-bottom: 1rem;
+}
+
+.work-info ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.work-info li {
+    margin-bottom: 0.5rem;
+}
+
+.work-info strong {
+    color: var(--noir-texte);
+    font-weight: 600;
+}
+
+/* Sous-œuvres (pour les recueils avec plusieurs textes) */
+.sub-work {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--blanc);
+    border-radius: 5px;
+    border-left: 3px solid var(--vert-camus);
+}
+
+.sub-work h4 {
+    font-size: 1.5rem;
+    color: var(--vert-camus);
+    margin-bottom: 0.5rem;
+}
+
