@@ -1,4 +1,7 @@
-/*
+/* ============================================
+   CAMUSMAIS.CSS - Feuille de style principale
+   Site Albert Camus - HTML & CSS uniquement
+   ============================================
    Charte graphique :
    - Rouge (#A63A3A) → Romans
    - Bleu (#2C5F7C) → Essais
@@ -6,8 +9,12 @@
    - Vert (#5A6B4A) → Œuvres secondaires / Recueils
    - Beige (#E8DCC4) → Fond général
    - Or (#8B7355) → Biographie
-
+   
    Polices : Libre Baskerville (titres) + Crimson Text (corps)
+   ============================================ */
+
+/* ============================================
+   VARIABLES ET CONFIGURATION GLOBALE
    ============================================ */
 
 :root {
@@ -21,11 +28,11 @@
     --noir-texte: #2C2C2C;
     --gris-clair: #F5F5F5;
     --blanc: #FFFFFF;
-
+    
     /* Typographie */
     --font-title: 'Libre Baskerville', serif;
     --font-body: 'Crimson Text', serif;
-
+    
     /* Dimensions header */
     --bandeau-height: 280px;
     --nav-height: 50px;
@@ -528,7 +535,7 @@ footer {
     .section-title {
         font-size: 2.5rem;
     }
-
+    
     .nav-link {
         font-size: 0.9rem;
         padding: 0.8rem 1rem;
@@ -544,12 +551,12 @@ footer {
         --bandeau-height: 150px;
         --total-header: 200px;
     }
-
+    
     .bandeau-title {
         font-size: 1.8rem;
         left: 15px;
     }
-
+    
     #main-nav {
         top: 150px;
         padding: 0 0.5rem;
@@ -559,55 +566,55 @@ footer {
         justify-content: center;
         gap: 0.3rem;
     }
-
+    
     .nav-accueil {
         font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
     }
-
+    
     .nav-link {
         font-size: 0.85rem;
         padding: 0.5rem 0.6rem;
     }
-
+    
     .nav-site-title {
         display: none;
     }
-
+    
     .home-content {
         padding-top: calc(var(--total-header) + 20px);
         min-height: 50vh;
     }
-
+    
     .home-quote {
         font-size: 1.4rem;
     }
-
+    
     .content-wrapper {
         padding: 1.5rem 1rem;
         padding-top: calc(var(--total-header) + 20px);
     }
-
+    
     .content-inner {
         padding: 1.5rem;
     }
-
+    
     .section-title {
         font-size: 2rem;
     }
-
+    
     .work-detail {
         padding: 1.5rem;
     }
-
+    
     .work-detail h3 {
         font-size: 1.5rem;
     }
-
+    
     .work-info {
         font-size: 1rem;
     }
-
+    
     .dropdown {
         min-width: 180px;
     }
@@ -622,77 +629,77 @@ footer {
         --bandeau-height: 100px;
         --total-header: 160px;
     }
-
+    
     .bandeau-title {
         font-size: 1.4rem;
         left: 10px;
     }
-
+    
     #main-nav {
         top: 100px;
         padding: 0.3rem;
     }
-
+    
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
     }
-
+    
     .nav-link {
         font-size: 0.75rem;
         padding: 0.3rem 0.4rem;
     }
-
+    
     .nav-accueil {
         font-size: 0.7rem;
         padding: 0.2rem 0.4rem;
     }
-
+    
     .home-content {
         padding-top: calc(var(--total-header) + 15px);
     }
-
+    
     .home-quote {
         font-size: 1.1rem;
         padding: 0.5rem 1rem;
     }
-
+    
     .content-wrapper {
         padding: 0.5rem;
         padding-top: calc(var(--total-header) + 15px);
     }
-
+    
     .content-inner {
         padding: 1rem;
         margin: 0;
         border-radius: 5px;
     }
-
+    
     .section-title {
         font-size: 1.8rem;
     }
-
+    
     .work-detail {
         padding: 1rem;
         margin-bottom: 2rem;
     }
-
+    
     .work-detail h3 {
         font-size: 1.3rem;
     }
-
+    
     .work-info ul {
         margin-left: 1.5rem;
     }
-
+    
     .sub-work {
         padding: 1rem;
     }
-
+    
     .sub-work h4 {
         font-size: 1.2rem;
     }
-
+    
     .dropdown {
         position: fixed;
         left: 5%;

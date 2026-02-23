@@ -1,279 +1,272 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- ============================================
-       META TAGS
-       ============================================ -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Albert Camus - Romans : L'Étranger, La Peste, La Chute, La Mort heureuse, Le Premier Homme">
-  <meta name="author" content="Aurélien Broglie">
-
-  <!-- TITRE DE LA PAGE -->
-  <title>Albert Camus - Romans</title>
-
-  <!-- ============================================
-       POLICES GOOGLE FONTS
-       ============================================ -->
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Crimson+Text:wght@400;600;700&amp;display=swap" rel="stylesheet">
-
-  <!-- ============================================
-       LIEN VERS LA FEUILLE DE STYLE CSS UNIQUE
-       ============================================ -->
-  <link rel="stylesheet" href="../css/camus-style.css">
+    <!-- ============================================
+         META TAGS
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Albert Camus - Romans : L'Étranger, La Peste, La Chute, La Mort heureuse, Le Premier Homme">
+    <meta name="author" content="Aurélien Broglie">
+    
+    <!-- TITRE DE LA PAGE -->
+    <title>Albert Camus - Romans</title>
+    
+    <!-- ============================================
+         POLICES GOOGLE FONTS
+         ============================================ -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Crimson+Text:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- ============================================
+         LIEN VERS LA FEUILLE DE STYLE CSS UNIQUE
+         ============================================ -->
+    <link rel="stylesheet" href="../../../Ateliers/16-HTML_CSS/css/camus-style.css">
 </head>
 
 <!-- Classe page-romans : active les marges rouges -->
 <body class="page-romans" id="top">
 
-<!-- ============================================
-     BANDEAU STICKY - Image sépia de Camus
-     ============================================ -->
-<div class="bandeau-sticky">
-  <img src="../img/bandeau_sépia.webp" alt="Bandeau Albert Camus">
-  <h1 class="bandeau-title">Albert Camus</h1>
-</div>
-
-<!-- ============================================
-     BARRE DE NAVIGATION HORIZONTALE
-     Identique à AccBio.html pour cohérence
-     ============================================ -->
-<nav id="main-nav">
-
-  <!-- Lien Accueil à gauche -->
-  <a href="AccBio.html" class="nav-accueil">&larr; Accueil</a>
-
-  <!-- Liens de navigation horizontaux avec menus déroulants -->
-  <ul class="nav-links">
-
-    <!-- Biographie -->
-    <li class="nav-item nav-item-biographie">
-      <a href="AccBio.html#biographie" class="nav-link nav-biographie">Biographie</a>
-      <ul class="dropdown dropdown-biographie">
-        <li><a href="AccBio.html#enfance">Enfance et adolescence</a></li>
-        <li><a href="AccBio.html#formation">Formation intellectuelle</a></li>
-        <li><a href="AccBio.html#resistance">Occupation et Résistance</a></li>
-        <li><a href="AccBio.html#gloire">Gloire et engagement</a></li>
-        <li><a href="AccBio.html#algerie">Guerre d'Algérie</a></li>
-        <li><a href="AccBio.html#nobel">Prix Nobel et mort</a></li>
-        <li><a href="AccBio.html#posterite">Postérité</a></li>
-        <li><a href="AccBio.html#cycles">Les trois cycles</a></li>
-      </ul>
-    </li>
-
-    <!-- Romans - Page active -->
-    <li class="nav-item nav-item-romans">
-      <a href="Romans.html" class="nav-link nav-romans active-romans">Romans</a>
-      <ul class="dropdown dropdown-romans">
-        <li><a href="#etranger">L'Étranger</a></li>
-        <li><a href="#peste">La Peste</a></li>
-        <li><a href="#chute">La Chute</a></li>
-        <li><a href="#mort-heureuse">La Mort heureuse</a></li>
-        <li><a href="#premier-homme">Le Premier Homme</a></li>
-      </ul>
-    </li>
-
-    <!-- Essais -->
-    <li class="nav-item nav-item-essais">
-      <a href="Essais.html" class="nav-link nav-essais">Essais</a>
-      <ul class="dropdown dropdown-essais">
-        <li><a href="Essais.html#sisyphe">Le Mythe de Sisyphe</a></li>
-        <li><a href="Essais.html#revolte">L'Homme révolté</a></li>
-        <li><a href="Essais.html#noces">Noces</a></li>
-        <li><a href="Essais.html#ete">L'Été</a></li>
-      </ul>
-    </li>
-
-    <!-- Théâtre -->
-    <li class="nav-item nav-item-theatre">
-      <a href="Theatre.html" class="nav-link nav-theatre">Théâtre</a>
-      <ul class="dropdown dropdown-theatre">
-        <li><a href="Theatre.html#caligula">Caligula</a></li>
-        <li><a href="Theatre.html#malentendu">Le Malentendu</a></li>
-        <li><a href="Theatre.html#siege">L'État de siège</a></li>
-        <li><a href="Theatre.html#justes">Les Justes</a></li>
-      </ul>
-    </li>
-
-    <!-- Recueils -->
-    <li class="nav-item nav-item-recueils">
-      <a href="OeuvSec.html" class="nav-link nav-recueils">Recueils</a>
-      <ul class="dropdown dropdown-recueils">
-        <li><a href="OeuvSec.html#envers">L'Envers et l'Endroit</a></li>
-        <li><a href="OeuvSec.html#exil">L'Exil et le Royaume</a></li>
-        <li><a href="OeuvSec.html#actuelles">Actuelles (I, II, III)</a></li>
-      </ul>
-    </li>
-
-  </ul>
-
-  <!-- Titre à droite -->
-  <span class="nav-site-title">Œuvres Complètes</span>
-
-</nav>
-
-<!-- ============================================
-     CONTENU PRINCIPAL - LES ROMANS
-     ============================================ -->
-<div class="content-wrapper">
-  <div class="content-inner">
-    <h2 class="section-title section-title-romans">Romans</h2>
+    <!-- ============================================
+         BANDEAU STICKY - Image sépia de Camus
+         ============================================ -->
+    <div class="bandeau-sticky">
+        <img src="../../../Ateliers/16-HTML_CSS/img/bandeau_sépia.webp" alt="Bandeau Albert Camus">
+        <h1 class="bandeau-title">Albert Camus</h1>
+    </div>
 
     <!-- ============================================
-         L'ÉTRANGER (1942)
+         BARRE DE NAVIGATION HORIZONTALE
+         Identique à AccBio.html pour cohérence
          ============================================ -->
-    <article class="work-detail detail-romans" id="etranger">
-      <h3>L'Étranger (1942)</h3>
-      <div class="work-info">
-        <p class="work-meta"><strong>Genre :</strong> Roman | <strong>Publication :</strong> 1942, Gallimard | <strong>Cycle :</strong> Cycle de l'absurde</p>
+    <nav id="main-nav">
 
-        <p><strong>Résumé :</strong> Le roman s'ouvre sur l'une des phrases les plus célèbres de la littérature française : « Aujourd'hui, maman est morte. Ou peut-être hier, je ne sais pas. » Meursault, employé de bureau à Alger, assiste aux funérailles de sa mère sans manifester d'émotion particulière. Il reprend sa vie quotidienne, retrouve Marie, va au cinéma, se baigne.</p>
 
-        <p>Le roman se divise en deux parties. Dans la première, Meursault vit au jour le jour, guidé par les sensations physiques : le soleil, la chaleur, la mer. Il se lie avec son voisin Raymond Sintès, qui le mêle à une affaire de violence conjugale. Sur une plage, aveuglé par le soleil et la lumière sur la lame d'un couteau, Meursault tire sur un Arabe — quatre coups de revolver supplémentaires après le premier.</p>
+        <!-- Liens de navigation horizontaux avec menus déroulants -->
+        <ul class="nav-links">
 
-        <p>La seconde partie est celle du procès. Meursault est moins jugé pour son crime que pour son comportement aux funérailles de sa mère : il n'a pas pleuré, il a fumé, il a bu du café au lait. Le procureur le qualifie de « monstre moral ». Condamné à mort, Meursault refuse la visite de l'aumônier et s'ouvre enfin à la « tendre indifférence du monde ».</p>
+            <!-- Biographie -->
+            <li class="nav-item nav-item-biographie">
+                <a href="AccBio.html#biographie" class="nav-link nav-biographie">Biographie</a>
+                <ul class="dropdown dropdown-biographie">
+                    <li><a href="AccBio.html#enfance">Enfance et adolescence</a></li>
+                    <li><a href="AccBio.html#formation">Formation intellectuelle</a></li>
+                    <li><a href="AccBio.html#resistance">Occupation et Résistance</a></li>
+                    <li><a href="AccBio.html#gloire">Gloire et engagement</a></li>
+                    <li><a href="AccBio.html#algerie">Guerre d'Algérie</a></li>
+                    <li><a href="AccBio.html#nobel">Prix Nobel et mort</a></li>
+                    <li><a href="AccBio.html#posterite">Postérité</a></li>
+                    <li><a href="AccBio.html#cycles">Les trois cycles</a></li>
+                </ul>
+            </li>
 
-        <p><strong>Thèmes :</strong></p>
-        <ul>
-          <li>L'absurde : le décalage entre l'homme et le monde</li>
-          <li>L'aliénation sociale : la société juge les émotions, pas les actes</li>
-          <li>La vérité et le refus du mensonge social</li>
-          <li>Le soleil et la sensualité méditerranéenne</li>
-          <li>La peine de mort et l'appareil judiciaire</li>
+            <!-- Romans - Page active -->
+            <li class="nav-item nav-item-romans">
+                <a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/Romans(1).html" class="nav-link nav-romans active-romans">Romans</a>
+                <ul class="dropdown dropdown-romans">
+                    <li><a href="#etranger">L'Étranger</a></li>
+                    <li><a href="#peste">La Peste</a></li>
+                    <li><a href="#chute">La Chute</a></li>
+                    <li><a href="#mort-heureuse">La Mort heureuse</a></li>
+                    <li><a href="#premier-homme">Le Premier Homme</a></li>
+                </ul>
+            </li>
+
+            <!-- Essais -->
+            <li class="nav-item nav-item-essais">
+                <a href="Essais.html" class="nav-link nav-essais">Essais</a>
+                <ul class="dropdown dropdown-essais">
+                    <li><a href="Essais.html#sisyphe">Le Mythe de Sisyphe</a></li>
+                    <li><a href="Essais.html#revolte">L'Homme révolté</a></li>
+                    <li><a href="Essais.html#noces">Noces</a></li>
+                    <li><a href="Essais.html#ete">L'Été</a></li>
+                </ul>
+            </li>
+
+            <!-- Théâtre -->
+            <li class="nav-item nav-item-theatre">
+                <a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/Theatre.html" class="nav-link nav-theatre">Théâtre</a>
+                <ul class="dropdown dropdown-theatre">
+                    <li><a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/Theatre.html#caligula">Caligula</a></li>
+                    <li><a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/Theatre.html#malentendu">Le Malentendu</a></li>
+                    <li><a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/Theatre.html#siege">L'État de siège</a></li>
+                    <li><a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/Theatre.html#justes">Les Justes</a></li>
+                </ul>
+            </li>
+
+            <!-- Recueils -->
+            <li class="nav-item nav-item-recueils">
+                <a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/OeuvSec.html" class="nav-link nav-recueils">Recueils</a>
+                <ul class="dropdown dropdown-recueils">
+                    <li><a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/OeuvSec.html#envers">L'Envers et l'Endroit</a></li>
+                    <li><a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/OeuvSec.html#exil">L'Exil et le Royaume</a></li>
+                    <li><a href="../../../Ateliers/16-HTML_CSS/Camus-WebStorm/OeuvSec.html#actuelles">Actuelles (I, II, III)</a></li>
+                </ul>
+            </li>
+
         </ul>
 
-        <p><strong>Style :</strong> Écriture « blanche », phrases courtes, passé composé qui crée une distance avec les événements. Influence du roman américain (Hemingway). Narration à la première personne, registre neutre et factuel.</p>
+        <!-- Titre à droite -->
+        <span class="nav-site-title">Œuvres Complètes</span>
 
-        <p><strong>Citation célèbre :</strong> « Aujourd'hui, maman est morte. Ou peut-être hier, je ne sais pas. »</p>
-      </div>
-    </article>
+    </nav>
 
     <!-- ============================================
-         LA PESTE (1947)
+         CONTENU PRINCIPAL - LES ROMANS
          ============================================ -->
-    <article class="work-detail detail-romans" id="peste">
-      <h3>La Peste (1947)</h3>
-      <div class="work-info">
-        <p class="work-meta"><strong>Genre :</strong> Roman / Chronique | <strong>Publication :</strong> 1947, Gallimard | <strong>Cycle :</strong> Cycle de la révolte</p>
+    <div class="content-wrapper">
+        <div class="content-inner">
+            <h2 class="section-title section-title-romans">Romans</h2>
 
-        <p><strong>Contexte :</strong> Allégorie de l'Occupation nazie et réflexion sur l'engagement face au mal collectif. Prix des Critiques 1947. L'un des romans français les plus lus au monde, redécouvert massivement lors de la pandémie de Covid-19.</p>
+            <!-- ============================================
+                 L'ÉTRANGER (1942)
+                 ============================================ -->
+            <article class="work-detail detail-romans" id="etranger">
+                <h3>L'Étranger (1942)</h3>
+                <div class="work-info">
+                    <p class="work-meta"><strong>Genre :</strong> Roman | <strong>Publication :</strong> 1942, Gallimard | <strong>Cycle :</strong> Cycle de l'absurde</p>
+                    
+                    <p><strong>Résumé :</strong> Le roman s'ouvre sur l'une des phrases les plus célèbres de la littérature française : « Aujourd'hui, maman est morte. Ou peut-être hier, je ne sais pas. » Meursault, employé de bureau à Alger, assiste aux funérailles de sa mère sans manifester d'émotion particulière. Il reprend sa vie quotidienne, retrouve Marie, va au cinéma, se baigne.</p>
+                    
+                    <p>Le roman se divise en deux parties. Dans la première, Meursault vit au jour le jour, guidé par les sensations physiques : le soleil, la chaleur, la mer. Il se lie avec son voisin Raymond Sintès, qui le mêle à une affaire de violence conjugale. Sur une plage, aveuglé par le soleil et la lumière sur la lame d'un couteau, Meursault tire sur un Arabe — quatre coups de revolver supplémentaires après le premier.</p>
+                    
+                    <p>La seconde partie est celle du procès. Meursault est moins jugé pour son crime que pour son comportement aux funérailles de sa mère : il n'a pas pleuré, il a fumé, il a bu du café au lait. Le procureur le qualifie de « monstre moral ». Condamné à mort, Meursault refuse la visite de l'aumônier et s'ouvre enfin à la « tendre indifférence du monde ».</p>
+                    
+                    <p><strong>Thèmes :</strong></p>
+                    <ul>
+                        <li>L'absurde : le décalage entre l'homme et le monde</li>
+                        <li>L'aliénation sociale : la société juge les émotions, pas les actes</li>
+                        <li>La vérité et le refus du mensonge social</li>
+                        <li>Le soleil et la sensualité méditerranéenne</li>
+                        <li>La peine de mort et l'appareil judiciaire</li>
+                    </ul>
+                    
+                    <p><strong>Style :</strong> Écriture « blanche », phrases courtes, passé composé qui crée une distance avec les événements. Influence du roman américain (Hemingway). Narration à la première personne, registre neutre et factuel.</p>
+                    
+                    <p><strong>Citation célèbre :</strong> « Aujourd'hui, maman est morte. Ou peut-être hier, je ne sais pas. »</p>
+                </div>
+            </article>
 
-        <p><strong>Résumé :</strong> Une épidémie de peste frappe la ville d'Oran en Algérie. La ville est mise en quarantaine, coupée du monde. Le docteur Bernard Rieux organise la lutte sanitaire. Autour de lui gravitent plusieurs personnages : Tarrou, qui tient un journal et crée des formations sanitaires volontaires ; Rambert, journaliste parisien piégé dans la ville qui cherche d'abord à fuir pour retrouver sa femme, puis décide de rester ; Grand, modeste employé de mairie qui tente d'écrire la phrase parfaite ; le père Paneloux, jésuite dont la foi est ébranlée par la mort d'un enfant ; Cottard, criminel qui prospère grâce au marché noir.</p>
+            <!-- ============================================
+                 LA PESTE (1947)
+                 ============================================ -->
+            <article class="work-detail detail-romans" id="peste">
+                <h3>La Peste (1947)</h3>
+                <div class="work-info">
+                    <p class="work-meta"><strong>Genre :</strong> Roman / Chronique | <strong>Publication :</strong> 1947, Gallimard | <strong>Cycle :</strong> Cycle de la révolte</p>
+                    
+                    <p><strong>Contexte :</strong> Allégorie de l'Occupation nazie et réflexion sur l'engagement face au mal collectif. Prix des Critiques 1947. L'un des romans français les plus lus au monde, redécouvert massivement lors de la pandémie de Covid-19.</p>
+                    
+                    <p><strong>Résumé :</strong> Une épidémie de peste frappe la ville d'Oran en Algérie. La ville est mise en quarantaine, coupée du monde. Le docteur Bernard Rieux organise la lutte sanitaire. Autour de lui gravitent plusieurs personnages : Tarrou, qui tient un journal et crée des formations sanitaires volontaires ; Rambert, journaliste parisien piégé dans la ville qui cherche d'abord à fuir pour retrouver sa femme, puis décide de rester ; Grand, modeste employé de mairie qui tente d'écrire la phrase parfaite ; le père Paneloux, jésuite dont la foi est ébranlée par la mort d'un enfant ; Cottard, criminel qui prospère grâce au marché noir.</p>
+                    
+                    <p>Structuré en cinq parties comme une tragédie classique, le roman suit l'évolution de l'épidémie : l'apparition des rats morts, le déni, la montée en puissance du fléau, la lutte quotidienne, puis le reflux et la libération. Tarrou meurt de la peste juste avant la fin de l'épidémie. Rieux, qui se révèle être le narrateur, conclut que « le bacille de la peste ne meurt ni ne disparaît jamais » mais qu'« il y a dans les hommes plus de choses à admirer que de choses à mépriser ».</p>
+                    
+                    <p><strong>Thèmes :</strong></p>
+                    <ul>
+                        <li>La solidarité face à l'adversité</li>
+                        <li>L'engagement et la responsabilité collective</li>
+                        <li>L'absurde collectif : le mal frappe sans raison</li>
+                        <li>La séparation et l'exil intérieur</li>
+                        <li>La résistance au mal sous toutes ses formes</li>
+                    </ul>
+                    
+                    <p><strong>Citation célèbre :</strong> « Il y a dans les hommes plus de choses à admirer que de choses à mépriser. »</p>
+                </div>
+            </article>
 
-        <p>Structuré en cinq parties comme une tragédie classique, le roman suit l'évolution de l'épidémie : l'apparition des rats morts, le déni, la montée en puissance du fléau, la lutte quotidienne, puis le reflux et la libération. Tarrou meurt de la peste juste avant la fin de l'épidémie. Rieux, qui se révèle être le narrateur, conclut que « le bacille de la peste ne meurt ni ne disparaît jamais » mais qu'« il y a dans les hommes plus de choses à admirer que de choses à mépriser ».</p>
+            <!-- ============================================
+                 LA CHUTE (1956)
+                 ============================================ -->
+            <article class="work-detail detail-romans" id="chute">
+                <h3>La Chute (1956)</h3>
+                <div class="work-info">
+                    <p class="work-meta"><strong>Genre :</strong> Récit / Monologue | <strong>Publication :</strong> 1956, Gallimard | <strong>Cycle :</strong> Hors cycle (ou cycle de l'amour ?)</p>
+                    
+                    <p><strong>Contexte :</strong> Œuvre de maturité, écrite après la rupture avec Sartre et les polémiques autour de L'Homme révolté. Exploration de la culpabilité et de la mauvaise foi. Considérée par beaucoup comme le chef-d'œuvre stylistique de Camus.</p>
+                    
+                    <p><strong>Résumé :</strong> Dans un bar d'Amsterdam nommé « Mexico-City », Jean-Baptiste Clamence, ancien avocat parisien brillant et admiré, raconte sa vie à un inconnu. Il se présente comme un « juge-pénitent ». Jadis respecté, généreux et sûr de sa vertu, il a un soir entendu le rire d'une femme dans son dos, puis, sur le Pont-Royal à Paris, il a assisté sans intervenir au suicide d'une jeune femme qui s'est jetée dans la Seine. Ce cri dans la nuit a détruit sa bonne conscience.</p>
+                    
+                    <p>Structuré en six parties comme six jours de confession, le récit est un monologue vertigineux où Clamence se confesse pour mieux juger les autres. Il possède en secret le panneau volé du retable de Gand, « Les Juges intègres », symbole de la justice introuvable. Le lecteur comprend progressivement que Clamence parle autant de lui-même que de l'humanité entière.</p>
+                    
+                    <p><strong>Thèmes :</strong></p>
+                    <ul>
+                        <li>La culpabilité et le jugement</li>
+                        <li>La mauvaise foi et l'hypocrisie morale</li>
+                        <li>L'impossibilité de l'innocence</li>
+                        <li>La chute morale et la lucidité tardive</li>
+                        <li>La confession comme manipulation</li>
+                    </ul>
+                    
+                    <p><strong>Style :</strong> Monologue adressé à un interlocuteur muet (le lecteur). Prose brillante, ironique, virtuose. Influence de Dostoïevski (Les Carnets du sous-sol). Ambiance brumeuse d'Amsterdam, opposée à la lumière méditerranéenne des œuvres précédentes.</p>
+                    
+                    <p><strong>Citation célèbre :</strong> « Je vous dirai quel est le grand drame de ma vie : c'est d'avoir mis mon moi dans la vérité au lieu de mettre la vérité dans mon moi. »</p>
+                </div>
+            </article>
 
-        <p><strong>Thèmes :</strong></p>
-        <ul>
-          <li>La solidarité face à l'adversité</li>
-          <li>L'engagement et la responsabilité collective</li>
-          <li>L'absurde collectif : le mal frappe sans raison</li>
-          <li>La séparation et l'exil intérieur</li>
-          <li>La résistance au mal sous toutes ses formes</li>
-        </ul>
+            <!-- ============================================
+                 LA MORT HEUREUSE (1971, posthume)
+                 ============================================ -->
+            <article class="work-detail detail-romans" id="mort-heureuse">
+                <h3>La Mort heureuse (1971, posthume)</h3>
+                <div class="work-info">
+                    <p class="work-meta"><strong>Genre :</strong> Roman | <strong>Publication :</strong> 1971, posthume (écrit 1936-1938) | <strong>Cycle :</strong> Avant les cycles</p>
+                    
+                    <p><strong>Contexte :</strong> Premier roman de Camus, refusé par Gallimard de son vivant, publié après sa mort. Préfigure L'Étranger dont il constitue en quelque sorte le brouillon. Le personnage principal s'appelle Patrice Mersault (et non Meursault).</p>
+                    
+                    <p><strong>Résumé :</strong> Patrice Mersault, employé de bureau à Alger, mène une vie monotone et aliénante. Il tue un homme riche et handicapé, Zagreus, pour s'emparer de sa fortune. Avec cet argent, il voyage (Prague, Gênes, les Baléares), puis s'installe dans une maison en bord de mer. Il cherche le bonheur dans la contemplation, la sensualité méditerranéenne et la liberté que procure l'argent. Il meurt « heureux », réconcilié avec le monde.</p>
+                    
+                    <p><strong>Thèmes :</strong></p>
+                    <ul>
+                        <li>La recherche du bonheur authentique</li>
+                        <li>La liberté par l'argent : peut-on acheter le bonheur ?</li>
+                        <li>L'absurdité du travail aliénant</li>
+                        <li>La sensualité et la vie méditerranéenne</li>
+                        <li>Le meurtre comme acte de libération (question morale)</li>
+                    </ul>
+                    
+                    <p><strong>Note :</strong> Roman de jeunesse imparfait mais révélateur des obsessions fondamentales de Camus : le soleil, la mer, la mort, le bonheur, la révolte contre la condition de travailleur.</p>
+                </div>
+            </article>
 
-        <p><strong>Citation célèbre :</strong> « Il y a dans les hommes plus de choses à admirer que de choses à mépriser. »</p>
-      </div>
-    </article>
+            <!-- ============================================
+                 LE PREMIER HOMME (1994, posthume)
+                 ============================================ -->
+            <article class="work-detail detail-romans" id="premier-homme">
+                <h3>Le Premier Homme (1994, posthume)</h3>
+                <div class="work-info">
+                    <p class="work-meta"><strong>Genre :</strong> Roman autobiographique | <strong>Publication :</strong> 1994, posthume (inachevé) | <strong>Cycle :</strong> Cycle de l'amour (projet)</p>
+                    
+                    <p><strong>Contexte :</strong> Manuscrit retrouvé dans la sacoche de Camus lors de l'accident mortel du 4 janvier 1960 à Villeblevin. Publié 34 ans plus tard par sa fille Catherine Camus. Texte brut, non retravaillé, avec des notes en marge. Succès immense et révélation posthume majeure.</p>
+                    
+                    <p><strong>Résumé :</strong> Jacques Cormery (alter ego de Camus) retourne en Algérie sur la tombe de son père, Henri Cormery, mort à 29 ans lors de la bataille de la Marne en 1914. Il découvre qu'il est plus âgé que son père ne l'a jamais été. Ce voyage déclenche une remontée dans le passé : l'enfance à Belcourt, quartier pauvre d'Alger, la mère silencieuse et aimante, la grand-mère tyrannique qui fouettait les enfants, l'oncle Étienne sourd-muet, les jeux dans la rue.</p>
+                    
+                    <p>Le personnage central de l'enfance est l'instituteur Louis Germain (appelé M. Bernard dans le roman), qui décèle l'intelligence de Jacques et convainc sa famille de le laisser passer le concours des bourses. Sans lui, pas de lycée, pas d'université, pas de littérature, pas de Nobel.</p>
+                    
+                    <p><strong>Thèmes :</strong></p>
+                    <ul>
+                        <li>La quête des origines et du père absent</li>
+                        <li>L'enfance et la pauvreté dignement vécue</li>
+                        <li>Le rôle fondamental de l'éducation</li>
+                        <li>L'identité algérienne de Camus</li>
+                        <li>La mémoire et la transmission</li>
+                        <li>L'amour filial muet (la mère)</li>
+                    </ul>
+                    
+                    <p><strong>Note :</strong> Texte d'une émotion rare, considéré comme le testament littéraire de Camus. Il éclaire toute l'œuvre en révélant ses racines autobiographiques. Le titre « Le Premier Homme » désigne à la fois le père inconnu et Jacques lui-même, homme sans héritage qui doit tout inventer.</p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Lien retour en haut -->
+        <a href="#top" class="retour-haut">&uarr; Retour en haut</a>
+
+    </div>
 
     <!-- ============================================
-         LA CHUTE (1956)
+         FOOTER
          ============================================ -->
-    <article class="work-detail detail-romans" id="chute">
-      <h3>La Chute (1956)</h3>
-      <div class="work-info">
-        <p class="work-meta"><strong>Genre :</strong> Récit / Monologue | <strong>Publication :</strong> 1956, Gallimard | <strong>Cycle :</strong> Hors cycle (ou cycle de l'amour ?)</p>
-
-        <p><strong>Contexte :</strong> Œuvre de maturité, écrite après la rupture avec Sartre et les polémiques autour de L'Homme révolté. Exploration de la culpabilité et de la mauvaise foi. Considérée par beaucoup comme le chef-d'œuvre stylistique de Camus.</p>
-
-        <p><strong>Résumé :</strong> Dans un bar d'Amsterdam nommé « Mexico-City », Jean-Baptiste Clamence, ancien avocat parisien brillant et admiré, raconte sa vie à un inconnu. Il se présente comme un « juge-pénitent ». Jadis respecté, généreux et sûr de sa vertu, il a un soir entendu le rire d'une femme dans son dos, puis, sur le Pont-Royal à Paris, il a assisté sans intervenir au suicide d'une jeune femme qui s'est jetée dans la Seine. Ce cri dans la nuit a détruit sa bonne conscience.</p>
-
-        <p>Structuré en six parties comme six jours de confession, le récit est un monologue vertigineux où Clamence se confesse pour mieux juger les autres. Il possède en secret le panneau volé du retable de Gand, « Les Juges intègres », symbole de la justice introuvable. Le lecteur comprend progressivement que Clamence parle autant de lui-même que de l'humanité entière.</p>
-
-        <p><strong>Thèmes :</strong></p>
-        <ul>
-          <li>La culpabilité et le jugement</li>
-          <li>La mauvaise foi et l'hypocrisie morale</li>
-          <li>L'impossibilité de l'innocence</li>
-          <li>La chute morale et la lucidité tardive</li>
-          <li>La confession comme manipulation</li>
-        </ul>
-
-        <p><strong>Style :</strong> Monologue adressé à un interlocuteur muet (le lecteur). Prose brillante, ironique, virtuose. Influence de Dostoïevski (Les Carnets du sous-sol). Ambiance brumeuse d'Amsterdam, opposée à la lumière méditerranéenne des œuvres précédentes.</p>
-
-        <p><strong>Citation célèbre :</strong> « Je vous dirai quel est le grand drame de ma vie : c'est d'avoir mis mon moi dans la vérité au lieu de mettre la vérité dans mon moi. »</p>
-      </div>
-    </article>
-
-    <!-- ============================================
-         LA MORT HEUREUSE (1971, posthume)
-         ============================================ -->
-    <article class="work-detail detail-romans" id="mort-heureuse">
-      <h3>La Mort heureuse (1971, posthume)</h3>
-      <div class="work-info">
-        <p class="work-meta"><strong>Genre :</strong> Roman | <strong>Publication :</strong> 1971, posthume (écrit 1936-1938) | <strong>Cycle :</strong> Avant les cycles</p>
-
-        <p><strong>Contexte :</strong> Premier roman de Camus, refusé par Gallimard de son vivant, publié après sa mort. Préfigure L'Étranger dont il constitue en quelque sorte le brouillon. Le personnage principal s'appelle Patrice Mersault (et non Meursault).</p>
-
-        <p><strong>Résumé :</strong> Patrice Mersault, employé de bureau à Alger, mène une vie monotone et aliénante. Il tue un homme riche et handicapé, Zagreus, pour s'emparer de sa fortune. Avec cet argent, il voyage (Prague, Gênes, les Baléares), puis s'installe dans une maison en bord de mer. Il cherche le bonheur dans la contemplation, la sensualité méditerranéenne et la liberté que procure l'argent. Il meurt « heureux », réconcilié avec le monde.</p>
-
-        <p><strong>Thèmes :</strong></p>
-        <ul>
-          <li>La recherche du bonheur authentique</li>
-          <li>La liberté par l'argent : peut-on acheter le bonheur ?</li>
-          <li>L'absurdité du travail aliénant</li>
-          <li>La sensualité et la vie méditerranéenne</li>
-          <li>Le meurtre comme acte de libération (question morale)</li>
-        </ul>
-
-        <p><strong>Note :</strong> Roman de jeunesse imparfait mais révélateur des obsessions fondamentales de Camus : le soleil, la mer, la mort, le bonheur, la révolte contre la condition de travailleur.</p>
-      </div>
-    </article>
-
-    <!-- ============================================
-         LE PREMIER HOMME (1994, posthume)
-         ============================================ -->
-    <article class="work-detail detail-romans" id="premier-homme">
-      <h3>Le Premier Homme (1994, posthume)</h3>
-      <div class="work-info">
-        <p class="work-meta"><strong>Genre :</strong> Roman autobiographique | <strong>Publication :</strong> 1994, posthume (inachevé) | <strong>Cycle :</strong> Cycle de l'amour (projet)</p>
-
-        <p><strong>Contexte :</strong> Manuscrit retrouvé dans la sacoche de Camus lors de l'accident mortel du 4 janvier 1960 à Villeblevin. Publié 34 ans plus tard par sa fille Catherine Camus. Texte brut, non retravaillé, avec des notes en marge. Succès immense et révélation posthume majeure.</p>
-
-        <p><strong>Résumé :</strong> Jacques Cormery (alter ego de Camus) retourne en Algérie sur la tombe de son père, Henri Cormery, mort à 29 ans lors de la bataille de la Marne en 1914. Il découvre qu'il est plus âgé que son père ne l'a jamais été. Ce voyage déclenche une remontée dans le passé : l'enfance à Belcourt, quartier pauvre d'Alger, la mère silencieuse et aimante, la grand-mère tyrannique qui fouettait les enfants, l'oncle Étienne sourd-muet, les jeux dans la rue.</p>
-
-        <p>Le personnage central de l'enfance est l'instituteur Louis Germain (appelé M. Bernard dans le roman), qui décèle l'intelligence de Jacques et convainc sa famille de le laisser passer le concours des bourses. Sans lui, pas de lycée, pas d'université, pas de littérature, pas de Nobel.</p>
-
-        <p><strong>Thèmes :</strong></p>
-        <ul>
-          <li>La quête des origines et du père absent</li>
-          <li>L'enfance et la pauvreté dignement vécue</li>
-          <li>Le rôle fondamental de l'éducation</li>
-          <li>L'identité algérienne de Camus</li>
-          <li>La mémoire et la transmission</li>
-          <li>L'amour filial muet (la mère)</li>
-        </ul>
-
-        <p><strong>Note :</strong> Texte d'une émotion rare, considéré comme le testament littéraire de Camus. Il éclaire toute l'œuvre en révélant ses racines autobiographiques. Le titre « Le Premier Homme » désigne à la fois le père inconnu et Jacques lui-même, homme sans héritage qui doit tout inventer.</p>
-      </div>
-    </article>
-
-  </div>
-
-  <!-- Lien retour en haut -->
-  <a href="#top" class="retour-haut">&uarr; Retour en haut</a>
-
-</div>
-
-<!-- ============================================
-     FOOTER
-     ============================================ -->
-<footer>
-  <div class="footer-content">
-    <p class="footer-project">Site créé dans le cadre de l'atelier HTML/CSS de 1ère année de CFC informaticien</p>
-    <p class="footer-author">Réalisé par Aurélien Broglie</p>
-    <p class="footer-contact">Contact : <a href="mailto:aurelien.broglie@etik.com">aurelien.broglie@etik.com</a></p>
-  </div>
-</footer>
-
-</body>
-</html>
+    <footer>
+        <div class="footer-content">
+            <p class="footer-project">Site créé dans le cadre de l'atelier HTML/CSS de 1ère année de CFC informaticien</p>
+            <p class="footer-author">Réalisé par Aurélien Broglie</p>
+            <p class="footer-contact">Contact : <a href="/cdn-cgi/l/email-protection#13726661767f7a767d3d71617c747f7a765376677a783d707c7e"><span class="__cf_email__" data-
