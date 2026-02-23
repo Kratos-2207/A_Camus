@@ -1,113 +1,324 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- ============================================
+         META TAGS
+         ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Albert Camus - Biographie</title>
-    <link rel="stylesheet" href="../css/main.css">
+    <meta name="description" content="Albert Camus - Biographie complète de l'écrivain et philosophe français, prix Nobel de littérature 1957">
+    <meta name="author" content="Aurélien Broglie">
+
+    <!-- TITRE DE LA PAGE -->
+    <title>Albert Camus - Accueil &amp; Biographie</title>
+
+    <!-- ============================================
+         POLICES GOOGLE FONTS
+         Libre Baskerville (titres) + Crimson Text (corps)
+         ============================================ -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Crimson+Text:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- ============================================
+         LIEN VERS LA FEUILLE DE STYLE CSS UNIQUE
+         ============================================ -->
+    <link rel="stylesheet" href="../css/camus-style.css">
 </head>
-<body class="biographie">
 
-<!-- HEADER : Navigation principale du site -->
-<header>
-<!--    <img src="../img/bandeau_sépia.webp" alt="Albert Camus" class="img-bandeau">-->
-    <div class="nom">Albert Camus</div>
-</header>
+<!-- Classe page-accueil : active les marges or/biographie -->
+<body class="page-accueil" id="top">
 
-<!-- MAIN : Contenu principal de la page biographie -->
-<main>
-    <section class="contenu-biographie">
-        <!-- Titre principal de la section -->
-        <h1>Biographie d'Albert Camus</h1>
+<!-- ============================================
+     BANDEAU STICKY - Image sépia de Camus
+     Reste fixe en haut de page lors du scroll
+     ============================================ -->
+<div class="bandeau-sticky">
+    <!-- IMPORTANT : Adapter le chemin vers ton image -->
+    <img src="../img/bandeau_sépia.webp" alt="Bandeau Albert Camus">
+    <h1 class="bandeau-title">Albert Camus</h1>
+</div>
 
-        <!-- Sous-section : Enfance et jeunesse -->
-        <article>
-            <h2>Enfance et jeunesse (1913-1932)</h2>
-            <p>
-                Albert Camus naît le 7 novembre 1913 à Mondovi, en Algérie française.
-                Son père, Lucien Camus, ouvrier agricole, meurt lors de la bataille de la Marne en 1914.
-                Sa mère, Catherine Sintès, d'origine espagnole, est sourde et quasi-muette.
-                Albert grandit dans le quartier populaire de Belcourt à Alger, dans une extrême pauvreté.
-            </p>
-            <p>
-                Grâce à son instituteur Louis Germain, qui décèle son intelligence, Camus obtient une bourse
-                et peut poursuivre ses études au lycée Bugeaud d'Alger. C'est là qu'il découvre la philosophie
-                et développe sa passion pour le football, qu'il doit abandonner suite à une tuberculose en 1930.
-            </p>
-        </article>
+<!-- ============================================
+     BARRE DE NAVIGATION HORIZONTALE
+     Chaque catégorie a sa couleur propre
+     Dropdowns au :hover (CSS uniquement)
+     ============================================ -->
+<nav id="main-nav">
 
-        <!-- Sous-section : Études et débuts littéraires -->
-        <article>
-            <h2>Études et débuts littéraires (1932-1940)</h2>
-            <p>
-                Camus étudie la philosophie à l'Université d'Alger. Il adhère au Parti communiste algérien en 1935,
-                mais en sera exclu deux ans plus tard pour divergences politiques. Il fonde la troupe de théâtre :
-                Théâtre du Travail, puis du Théâtre de l'Équipe.
-            </p>
-            <p>
-                En 1936, il obtient son diplôme d'études supérieures avec un mémoire sur <strong>"Rapports de l'hellénisme
-                et du christianisme à travers les œuvres de Plotin et de saint Augustin".</strong> Sa tuberculose l'empêche
-                de passer l'agrégation de philosophie.
-            </p>
-        </article>
+    <!-- Lien Accueil à gauche (remplace le <button> JS) -->
+    <a href="AccBio.html" class="nav-accueil">&larr; Accueil</a>
 
-        <!-- Sous-section : La guerre et la Résistance -->
-        <article>
-            <h2>La guerre et la Résistance (1940-1945)</h2>
-            <p>
-                En 1940, Camus quitte l'Algérie pour Paris. Il travaille comme secrétaire de rédaction à Paris-Soir.
-                Pendant l'Occupation, il participe à la Résistance et devient rédacteur en chef du journal clandestin Combat.
-            </p>
-            <p>
-                C'est durant cette période qu'il publie <strong>"L'Étranger" (1942)</strong> et <strong>"Le Mythe de Sisyphe" (1942)</strong>,
-                deux œuvres majeures qui explorent l'absurde de la condition humaine. Il rencontre Jean-Paul Sartre
-                et Simone de Beauvoir, avec qui il entretient d'abord des relations amicales.
-            </p>
-        </article>
+    <!-- Liens de navigation horizontaux avec menus déroulants -->
+    <ul class="nav-links">
 
-        <!-- Sous-section : Consécration et engagements -->
-        <article>
-            <h2>Consécration et engagements (1945-1957)</h2>
-            <p>
-                Après la guerre, Camus connaît le succès avec <strong>"La Peste" (1947)</strong> et <strong>"L'Homme révolté" (1951)</strong>.
-                Ce dernier ouvrage provoque une rupture définitive avec Sartre en 1952, les deux intellectuels
-                s'opposant sur la question du communisme et des moyens de la révolution.
-            </p>
-            <p>
-                Camus s'engage contre toutes les formes de totalitarisme et prend position contre la peine de mort.
-                Durant la guerre d'Algérie, il appelle à une trêve civile, cherchant une voie médiane entre
-                l'indépendance et le maintien de l'Algérie française, ce qui lui vaut des critiques de tous bords.
-            </p>
-        </article>
+        <!-- Biographie - Or/Brun clair (page active ici) -->
+        <li class="nav-item nav-item-biographie">
+            <a href="AccBio.html#biographie" class="nav-link nav-biographie active-biographie">Biographie</a>
+            <ul class="dropdown dropdown-biographie">
+                <li><a href="AccBio.html#enfance">Enfance et adolescence</a></li>
+                <li><a href="AccBio.html#formation">Formation intellectuelle</a></li>
+                <li><a href="AccBio.html#resistance">Occupation et Résistance</a></li>
+                <li><a href="AccBio.html#gloire">Gloire et engagement</a></li>
+                <li><a href="AccBio.html#algerie">Guerre d'Algérie</a></li>
+                <li><a href="AccBio.html#nobel">Prix Nobel et mort</a></li>
+                <li><a href="AccBio.html#posterite">Postérité</a></li>
+                <li><a href="AccBio.html#cycles">Les trois cycles</a></li>
+            </ul>
+        </li>
 
-        <!-- Sous-section : Prix Nobel et mort tragique -->
-        <article>
-            <h2>Prix Nobel et mort tragique (1957-1960)</h2>
-            <p>
-                En 1957, à 44 ans, Albert Camus reçoit <strong>le Prix Nobel de Littérature "pour l'ensemble d'une œuvre
-                qui met en lumière, avec un sérieux pénétrant, les problèmes se posant de nos jours à la conscience
-                des hommes"</strong>. Il est le deuxième plus jeune lauréat de ce prix.
-            </p>
-            <p>
-                Le 4 janvier 1960, Albert Camus meurt dans un accident de voiture à Villeblevin, dans l'Yonne,
-                alors qu'il voyageait avec son éditeur Michel Gallimard. Dans sa poche, on retrouve le manuscrit
-                inachevé de <strong>"Le Premier Homme"</strong>, roman autobiographique qui sera publié à titre posthume en 1994.
-            </p>
-        </article>
+        <!-- Romans - Rouge -->
+        <li class="nav-item nav-item-romans">
+            <a href="Romans.html" class="nav-link nav-romans">Romans</a>
+            <ul class="dropdown dropdown-romans">
+                <li><a href="Romans.html#etranger">L'Étranger</a></li>
+                <li><a href="Romans.html#peste">La Peste</a></li>
+                <li><a href="Romans.html#chute">La Chute</a></li>
+                <li><a href="Romans.html#mort-heureuse">La Mort heureuse</a></li>
+                <li><a href="Romans.html#premier-homme">Le Premier Homme</a></li>
+            </ul>
+        </li>
 
-        <!-- Citation emblématique -->
-        <blockquote>
-            <p><strong>"Au milieu de l'hiver, j'ai découvert en moi un invincible été."</strong></p>
-            <cite>— Albert Camus, Retour à Tipasa</cite>
+        <!-- Essais - Bleu -->
+        <li class="nav-item nav-item-essais">
+            <a href="Essais.html" class="nav-link nav-essais">Essais</a>
+            <ul class="dropdown dropdown-essais">
+                <li><a href="Essais.html#sisyphe">Le Mythe de Sisyphe</a></li>
+                <li><a href="Essais.html#revolte">L'Homme révolté</a></li>
+                <li><a href="Essais.html#noces">Noces</a></li>
+                <li><a href="Essais.html#ete">L'Été</a></li>
+            </ul>
+        </li>
+
+        <!-- Théâtre - Brun -->
+        <li class="nav-item nav-item-theatre">
+            <a href="Theatre.html" class="nav-link nav-theatre">Théâtre</a>
+            <ul class="dropdown dropdown-theatre">
+                <li><a href="Theatre.html#caligula">Caligula</a></li>
+                <li><a href="Theatre.html#malentendu">Le Malentendu</a></li>
+                <li><a href="Theatre.html#siege">L'État de siège</a></li>
+                <li><a href="Theatre.html#justes">Les Justes</a></li>
+            </ul>
+        </li>
+
+        <!-- Recueils / Œuvres secondaires - Vert -->
+        <li class="nav-item nav-item-recueils">
+            <a href="OeuvSec.html" class="nav-link nav-recueils">Recueils</a>
+            <ul class="dropdown dropdown-recueils">
+                <li><a href="OeuvSec.html#envers">L'Envers et l'Endroit</a></li>
+                <li><a href="OeuvSec.html#exil">L'Exil et le Royaume</a></li>
+                <li><a href="OeuvSec.html#actuelles">Actuelles (I, II, III)</a></li>
+            </ul>
+        </li>
+
+    </ul>
+
+    <!-- Titre à droite -->
+    <span class="nav-site-title">Œuvres Complètes</span>
+
+</nav>
+
+<!-- ============================================
+     PAGE D'ACCUEIL - Citation emblématique
+     ============================================ -->
+<div class="home-content">
+    <div class="home-welcome">
+        <blockquote class="home-quote">
+            « Au milieu de l'hiver, j'ai découvert en moi un invincible été. »
         </blockquote>
-    </section>
-</main>
+        <p class="home-quote-source">— Albert Camus, <em>Retour à Tipasa</em>, 1954</p>
+        <p class="home-invite">Explorez l'œuvre complète d'Albert Camus à travers les sections ci-dessus.</p>
+    </div>
+</div>
 
-<!-- FOOTER : Pied de page avec informations légales -->
+<!-- ============================================
+     SECTION BIOGRAPHIE
+     Contenu complet repris de ton camus-site.html
+     ============================================ -->
+<div class="content-wrapper" id="biographie">
+    <div class="content-inner">
+        <h2 class="section-title section-title-biographie">Biographie d'Albert Camus</h2>
+
+        <!-- Enfance et adolescence -->
+        <article class="work-detail detail-biographie" id="enfance">
+            <h3>1913-1930 : Enfance et adolescence en Algérie</h3>
+            <div class="work-info">
+                <p><strong>7 novembre 1913 :</strong> Naissance à Mondovi, près de Bône (aujourd'hui Annaba), Algérie française. Père : Lucien Camus, ouvrier caviste. Mère : Catherine Sintès, d'origine espagnole, sourde et quasi-muette, analphabète.</p>
+                <p><strong>1914 :</strong> Lucien Camus meurt à la bataille de la Marne (Première Guerre mondiale). Albert n'a qu'un an. La famille (mère, grand-mère autoritaire, oncle) s'installe dans le quartier pauvre de Belcourt à Alger.</p>
+                <p><strong>Enfance :</strong> Pauvreté extrême. Appartement sans eau courante ni électricité. Silence maternel (la mère ne parle presque pas). Jeux dans la rue, football, bains de mer. Découverte de la lumière méditerranéenne.</p>
+                <p><strong>1923-1930 :</strong> École primaire. Rencontre décisive avec Louis Germain, instituteur qui repère l'intelligence d'Albert et convainc la famille de le laisser poursuivre ses études (contre l'avis de la grand-mère qui veut le faire travailler). Camus lui dédiera son discours du Prix Nobel.</p>
+                <p><strong>1930 :</strong> Première atteinte de tuberculose. Maladie qui le marquera toute sa vie. Vit chez son oncle Gustave Acault, boucher cultivé, qui lui fait découvrir la littérature.</p>
+            </div>
+        </article>
+
+        <!-- Formation intellectuelle -->
+        <article class="work-detail detail-biographie" id="formation">
+            <h3>1930-1940 : Formation intellectuelle et premiers engagements</h3>
+            <div class="work-info">
+                <p><strong>1930-1933 :</strong> Lycée d'Alger (aujourd'hui lycée Bugeaud). Baccalauréat. Rencontre avec Jean Grenier, professeur de philosophie qui devient son mentor. Grenier lui fait découvrir Nietzsche, Gide, Malraux.</p>
+                <p><strong>1933 :</strong> Inscription en hypokhâgne, puis à la Faculté des Lettres d'Alger (philosophie).</p>
+                <p><strong>1934 :</strong> Mariage avec Simone Hié, morphinomane. Échec rapide du mariage.</p>
+                <p><strong>1935 :</strong> Adhésion au Parti communiste algérien (anticolonialiste). Activités culturelles dans les quartiers pauvres. Début de son engagement pour les musulmans d'Algérie.</p>
+                <p><strong>1936 :</strong> Diplôme d'études supérieures (équivalent master) sur « Néo-platonisme et pensée chrétienne » (Plotin, saint Augustin). La tuberculose l'empêche de passer l'agrégation (certificat médical négatif).</p>
+                <p><strong>1936-1937 :</strong> Rupture avec le Parti communiste (désaccord sur la question coloniale). Fondation du Théâtre du Travail (puis Théâtre de l'Équipe). Mise en scène, adaptation, jeu d'acteur.</p>
+                <p><strong>1937 :</strong> Publication de L'Envers et l'Endroit (350 exemplaires). Divorce d'avec Simone Hié.</p>
+                <p><strong>1938 :</strong> Journaliste à Alger républicain. Enquêtes sur la misère kabyle. Publication de Noces.</p>
+                <p><strong>1940 :</strong> Alger républicain censuré. Camus part pour Paris. Mariage avec Francine Faure, mathématicienne. Secrétaire de rédaction à Paris-Soir. Débâcle : repli du journal à Clermont-Ferrand puis Lyon.</p>
+            </div>
+        </article>
+
+        <!-- Occupation et Résistance -->
+        <article class="work-detail detail-biographie" id="resistance">
+            <h3>1940-1945 : Occupation, Résistance, célébrité</h3>
+            <div class="work-info">
+                <p><strong>1940-1942 :</strong> Lyon, puis retour en Algérie (Oran). Achève L'Étranger et Le Mythe de Sisyphe. Enseigne à Oran.</p>
+                <p><strong>1942 :</strong> Retour en France métropolitaine pour soigner sa tuberculose. Publication de L'Étranger et Le Mythe de Sisyphe. Succès immédiat. Rencontre avec Sartre et Beauvoir.</p>
+                <p><strong>1943 :</strong> Lecteur chez Gallimard (il le restera jusqu'à sa mort). Première de Caligula (théâtre). Entre dans la Résistance : réseau Combat.</p>
+                <p><strong>1944 :</strong> Publication du Malentendu. Rédacteur en chef de Combat (journal clandestin devenu légal à la Libération). Éditoriaux célèbres de la Libération. Rencontre décisive avec René Char.</p>
+                <p><strong>1945 :</strong> Naissance des jumeaux Jean et Catherine. Voyage en Amérique (USA). Démission de Combat (désaccords éditoriaux).</p>
+            </div>
+        </article>
+
+        <!-- Gloire et engagement -->
+        <article class="work-detail detail-biographie" id="gloire">
+            <h3>1945-1951 : Gloire et engagement</h3>
+            <div class="work-info">
+                <p><strong>1947 :</strong> Publication de La Peste. Immense succès critique et public. Camus devient une figure majeure de l'intelligentsia française.</p>
+                <p><strong>1948 :</strong> L'État de siège (échec public). Voyage en Amérique du Sud.</p>
+                <p><strong>1949 :</strong> Les Justes (théâtre). Santé fragile : tuberculose récurrente.</p>
+                <p><strong>1950 :</strong> Publication d'Actuelles I. Liaison avec l'actrice Maria Casarès (qui durera jusqu'à sa mort).</p>
+                <p><strong>1951 :</strong> Publication de L'Homme révolté. Polémique violente avec Sartre et Les Temps modernes. Attaques de la gauche communiste. Rupture définitive avec Sartre en 1952.</p>
+                <p><strong>Contexte :</strong> Camus refuse le stalinisme, critique les crimes communistes. Sartre et Beauvoir restent compagnons de route du PCF. Camus isolé, attaqué comme « réactionnaire ».</p>
+            </div>
+        </article>
+
+        <!-- Guerre d'Algérie -->
+        <article class="work-detail detail-biographie" id="algerie">
+            <h3>1951-1957 : Guerre d'Algérie et isolement</h3>
+            <div class="work-info">
+                <p><strong>1953 :</strong> Publication d'Actuelles II. Adaptation des Possédés de Dostoïevski (théâtre).</p>
+                <p><strong>1954 :</strong> Publication de L'Été. Début de la guerre d'Algérie (Toussaint rouge, 1er novembre 1954).</p>
+                <p><strong>1956 :</strong> Publication de La Chute. Appel à la trêve civile en Algérie (meeting à Alger, hué par les deux camps). Silence public sur l'Algérie après cet échec.</p>
+                <p><strong>Position douloureuse :</strong> Camus refuse l'indépendance algérienne (peur pour les Européens et les Arabes francophiles). Défend une solution fédérale. Incompris : traité de « colonialiste » par les anticolonialistes, de « traître » par les Français d'Algérie. Solitude morale.</p>
+                <p><strong>Citation controversée (1957) :</strong> « En ce moment, on lance des bombes dans les tramways d'Alger. Ma mère peut se trouver dans un de ces tramways. Si c'est cela la justice, je préfère ma mère. » (Souvent résumé inexactement : « Entre ma mère et la justice, je choisis ma mère. »)</p>
+                <p><strong>1957 :</strong> Publication de L'Exil et le Royaume. Réception mitigée.</p>
+            </div>
+        </article>
+
+        <!-- Prix Nobel et mort -->
+        <article class="work-detail detail-biographie" id="nobel">
+            <h3>1957-1960 : Prix Nobel et mort brutale</h3>
+            <div class="work-info">
+                <p><strong>17 octobre 1957 :</strong> Prix Nobel de Littérature à 44 ans. Deuxième plus jeune Nobel après Kipling. Discours à Stockholm : « Chaque génération se croit vouée à refaire le monde. La mienne sait pourtant qu'elle ne le refera pas. Mais sa tâche est peut-être plus grande. Elle consiste à empêcher que le monde se défasse. »</p>
+                <p><strong>Réactions :</strong> Attaques violentes de la presse de gauche. Sartre ironise : « un Nobel pour Camus, c'est une distinction pour garagiste. » Malaise dans l'intelligentsia française.</p>
+                <p><strong>1958 :</strong> Achat d'une maison à Lourmarin (Vaucluse). Publication d'Actuelles III. Travaille à deux projets : Le Premier Homme (roman autobiographique) et adaptation de Dostoïevski pour le théâtre.</p>
+                <p><strong>1959 :</strong> Travail intense sur Le Premier Homme. Projets théâtraux. Santé fragile mais moral meilleur.</p>
+                <p><strong>4 janvier 1960 :</strong> Mort brutale dans un accident de voiture sur la route de Sens, près de Villeblevin (Yonne). Il voyage avec son éditeur Michel Gallimard qui conduisait. Voiture percute un arbre. Camus tué sur le coup. Gallimard décède quelques jours plus tard. Camus avait dans sa poche un billet de train inutilisé (il devait rentrer en train mais a accepté la voiture au dernier moment). Dans l'épave : manuscrit du Premier Homme.</p>
+                <p><strong>Enterrement :</strong> À Lourmarin. Pas de cérémonie religieuse. Message de Malraux, ministre de la Culture : « Il représentait en ce siècle, contre l'histoire, l'héritier de la lignée des moralistes dont les œuvres constituent peut-être ce qu'il y a de plus original dans les lettres françaises. »</p>
+            </div>
+        </article>
+
+        <!-- Œuvres posthumes -->
+        <article class="work-detail detail-biographie">
+            <h3>Œuvres posthumes</h3>
+            <div class="work-info">
+                <p><strong>1962 :</strong> Carnets I et II (1935-1951) - Notes, réflexions, ébauches</p>
+                <p><strong>1971 :</strong> La Mort heureuse (premier roman, refusé par Gallimard en 1938)</p>
+                <p><strong>1989 :</strong> Carnets III (1951-1959)</p>
+                <p><strong>1994 :</strong> Le Premier Homme (manuscrit inachevé trouvé dans l'épave) - Succès immense, révélation posthume</p>
+                <p><strong>2000s :</strong> Correspondances, articles, textes divers</p>
+            </div>
+        </article>
+
+        <!-- Personnalité -->
+        <article class="work-detail detail-biographie">
+            <h3>Personnalité et caractère</h3>
+            <div class="work-info">
+                <p><strong>Physique :</strong> Beau, élégant, séducteur. Taille moyenne, yeux clairs, sourire charmeur. Humphrey Bogart méditerranéen.</p>
+                <p><strong>Habitudes :</strong> Fumeur invétéré (Gauloises). Amateur de football (gardien de but dans sa jeunesse). Passion pour le théâtre (mise en scène, adaptation). Vie nocturne parisienne (Saint-Germain-des-Prés).</p>
+                <p><strong>Amours :</strong> Marié deux fois (Simone Hié, Francine Faure). Nombreuses liaisons (Maria Casarès, actrice, grand amour secret). Souffrance de ne pouvoir vivre une passion unique. Culpabilité envers Francine.</p>
+                <p><strong>Caractère :</strong> Généreux, fidèle en amitié. Susceptible, sensible aux attaques. Mélancolique. Nostalgique de l'Algérie. Angoissé par la maladie. Perfectionniste dans l'écriture.</p>
+                <p><strong>Engagement :</strong> Refus des totalitarismes (nazisme, stalinisme). Combat pour la justice sociale sans violence de masse. Défense des opprimés (musulmans d'Algérie, républicains espagnols, victimes du stalinisme). Opposition à la peine de mort.</p>
+            </div>
+        </article>
+
+        <!-- Postérité -->
+        <article class="work-detail detail-biographie" id="posterite">
+            <h3>Postérité</h3>
+            <div class="work-info">
+                <p><strong>Immédiate (1960-1980) :</strong> Enterrement national refusé par la famille. Hommages officiels (Malraux). Mais dépréciation par l'intelligentsia de gauche (Sartre domine). Camus vu comme « moral », « humaniste », donc « dépassé ».</p>
+                <p><strong>Réhabilitation (1980-2000) :</strong> Chute du communisme (1989-1991) valide les critiques de Camus contre le stalinisme. Réévaluation de L'Homme révolté. Redécouverte de son actualité (terrorisme, nihilisme, violence politique).</p>
+                <p><strong>Aujourd'hui :</strong> Camus : auteur le plus lu des philosophes français au XXe siècle (avec Sartre). L'Étranger : un des romans français les plus traduits au monde. Célébrité internationale massive (USA, Amérique latine, Japon). Figure de la résistance au totalitarisme. Symbole de l'humanisme laïc.</p>
+                <p><strong>2010 :</strong> Projet de panthéonisation (transfert au Panthéon) proposé par Sarkozy. Refusé par la famille (Jean Camus, fils).</p>
+                <p><strong>Héritage :</strong> Pensée de la mesure contre les extrêmes. Défense de l'individu contre les systèmes. Révolte sans meurtre. Amour de la vie malgré l'absurde. « Pensée de midi » : synthèse méditerranéenne entre nihilisme nordique et sagesse grecque.</p>
+            </div>
+        </article>
+
+        <!-- Les trois cycles -->
+        <article class="work-detail detail-biographie" id="cycles">
+            <h3>Les trois cycles de l'œuvre</h3>
+            <div class="work-info">
+                <p>Camus a structuré son œuvre en trois cycles (inachevé au troisième) :</p>
+
+                <div class="sub-work">
+                    <h4>Cycle de l'absurde (1938-1944)</h4>
+                    <ul>
+                        <li>Roman : L'Étranger</li>
+                        <li>Essai : Le Mythe de Sisyphe</li>
+                        <li>Théâtre : Caligula, Le Malentendu</li>
+                    </ul>
+                    <p><strong>Thème :</strong> Constat de l'absurde. Absence de sens. Indifférence du monde.</p>
+                </div>
+
+                <div class="sub-work">
+                    <h4>Cycle de la révolte (1947-1951)</h4>
+                    <ul>
+                        <li>Roman : La Peste</li>
+                        <li>Essai : L'Homme révolté</li>
+                        <li>Théâtre : L'État de siège, Les Justes</li>
+                    </ul>
+                    <p><strong>Thème :</strong> Face à l'absurde, révolte et solidarité. Engagement sans meurtre de masse.</p>
+                </div>
+
+                <div class="sub-work">
+                    <h4>Cycle de l'amour (projet, 1956-1960)</h4>
+                    <ul>
+                        <li>Roman : Le Premier Homme (inachevé)</li>
+                        <li>Essai : (non réalisé)</li>
+                        <li>Théâtre : (non réalisé)</li>
+                        <li>Nouvelles : L'Exil et le Royaume</li>
+                        <li>Récit : La Chute (hors cycle ?)</li>
+                    </ul>
+                    <p><strong>Thème :</strong> Réconciliation, amour, retour aux sources. Dépassement de la révolte ?</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Citations célèbres -->
+        <article class="work-detail detail-biographie">
+            <h3>Citations célèbres sur Camus</h3>
+            <div class="work-info">
+                <p><strong>Sartre (hommage funèbre, 1960) :</strong> « Camus était pour nous l'admirable conjonction d'une personne, d'une action et d'une œuvre. »</p>
+                <p><strong>Malraux (message aux obsèques) :</strong> « Il représentait en ce siècle l'héritier de la lignée des moralistes dont les œuvres constituent peut-être ce qu'il y a de plus original dans les lettres françaises. »</p>
+                <p><strong>René Char (poète, ami proche) :</strong> « Albert Camus était de cette race d'hommes qui ne peut mentir. »</p>
+                <p><strong>Catherine Camus (sa fille) :</strong> « Mon père était habité par l'idée qu'on peut toujours choisir entre le bien et le mal. »</p>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Lien retour en haut -->
+    <a href="#top" class="retour-haut">&uarr; Retour en haut</a>
+
+</div>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
 <footer>
-    <p>&copy; 2026 - Projet pédagogique sur Albert Camus par <strong>Aurélien Broglie</strong></p>
-    <p>Contact : <a href="mailto:contact@exemple.com">aurelien.broglie@etik.com</a></p>
-    <p>Réalisé dans le cadre de l'atelier HTML/CSS- CFC 1ere année</p>
+    <div class="footer-content">
+        <p class="footer-project">Site créé dans le cadre de l'atelier HTML/CSS de 1ère année de CFC informaticien</p>
+        <p class="footer-author">Réalisé par Aurélien Broglie</p>
+        <p class="footer-contact">Contact : <a href="mailto:aurelien.broglie@etik.com">aurelien.broglie@etik.com</a></p>
+    </div>
 </footer>
 
 </body>

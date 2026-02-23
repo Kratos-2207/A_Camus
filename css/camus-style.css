@@ -1,5 +1,13 @@
-/* ============================================
-   VARIABLES ET CONFIGURATION GLOBALE
+/*
+   Charte graphique :
+   - Rouge (#A63A3A) → Romans
+   - Bleu (#2C5F7C) → Essais
+   - Brun (#6B5344) → Théâtre
+   - Vert (#5A6B4A) → Œuvres secondaires / Recueils
+   - Beige (#E8DCC4) → Fond général
+   - Or (#8B7355) → Biographie
+
+   Polices : Libre Baskerville (titres) + Crimson Text (corps)
    ============================================ */
 
 :root {
@@ -9,6 +17,7 @@
     --brun-camus: #6B5344;
     --vert-camus: #5A6B4A;
     --beige-camus: #E8DCC4;
+    --or-camus: #8B7355;
     --noir-texte: #2C2C2C;
     --gris-clair: #F5F5F5;
     --blanc: #FFFFFF;
@@ -16,6 +25,11 @@
     /* Typographie */
     --font-title: 'Libre Baskerville', serif;
     --font-body: 'Crimson Text', serif;
+
+    /* Dimensions header */
+    --bandeau-height: 280px;
+    --nav-height: 50px;
+    --total-header: 330px;
 }
 
 /* ============================================
@@ -26,6 +40,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -41,16 +59,24 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
 /* ============================================
    BANDEAU STICKY EN HAUT
+   Image sépia de Camus, fixe lors du scroll
    ============================================ */
+
 .bandeau-sticky {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: 280px;
+    height: var(--bandeau-height);
     z-index: 1001;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -63,339 +89,301 @@ h1, h2, h3, h4, h5, h6 {
     object-position: center top;
 }
 
-/* AJOUTE CES LIGNES ICI ↓ */
+/* Titre "Albert Camus" superposé sur le bandeau */
 .bandeau-title {
     position: absolute;
-    left: 3rem;
-    bottom: 2rem;
-    color: var(--beige-camus);
-    font-size: 3rem;
-    margin: 0;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    color: var(--blanc);
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.05em;
     z-index: 1002;
 }
 
 /* ============================================
-   NAVIGATION HEADER
+   BARRE DE NAVIGATION HORIZONTALE
+   Fixe sous le bandeau, hauteur 50px
+   Dropdowns au :hover (CSS uniquement)
    ============================================ */
 
-#main-header {
+#main-nav {
     position: fixed;
-    top: 280px;
+    top: var(--bandeau-height);
     left: 0;
     right: 0;
-    background: rgba(44, 44, 44, 0.95);
+    height: var(--nav-height);
+    background: rgba(66, 66, 66, 0.95);
     backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
     z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
-}
-
-.header-right h1 {
+/* Bouton/lien Accueil à gauche */
+.nav-accueil {
     color: var(--beige-camus);
-    font-size: 1.5rem;
-    margin: 0;
-}
-
-.nav-btn {
-    background: var(--rouge-camus);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(232, 220, 196, 0.5);
+    border-radius: 5px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.nav-btn:hover {
-    background: #8A2F2F;
+.nav-accueil:hover {
+    background: var(--rouge-camus);
+    color: var(--blanc);
+    border-color: var(--rouge-camus);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ============================================
-   GESTION DES SECTIONS
-   ============================================ */
-
-section {
-    display: none;
-    min-height: 100vh;
-    padding-top: 310px;
-}
-
-section.active-section {
-    display: block;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ============================================
-   PAGE D'ACCUEIL - HERO
-   ============================================
-
-.hero {
-    text-align: center;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--brun-camus) 0%, var(--noir-texte) 100%);
-    color: var(--beige-camus);
-}
-
-.subtitle {
-    font-size: 1.8rem;
-    font-style: italic;
-    opacity: 0.9;
-    font-weight: 400;
-}*/
-
-/* ============================================
-   MENU 3D - PILE DE LIVRES
-   ============================================ */
-
-.book-stack-container {
+/* Liste de liens horizontaux */
+.nav-links {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    min-height: 70vh;
-    padding: 0.5rem 2% 3rem 1rem;
-    perspective: 1500px;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    gap: 0;
 }
 
-.book-stack {
+/* Chaque item de navigation */
+.nav-item {
     position: relative;
-    width: 500px;
-    height: 400px;
-    transform-style: preserve-3d;
 }
 
-.book {
-    position: absolute;
-    width: 100%;
-    height: 60px;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transform-style: preserve-3d;
+/* Lien principal de chaque catégorie */
+.nav-link {
+    display: block;
+    color: var(--beige-camus);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-/* Position des livres dans la pile */
-.book:nth-child(1) { bottom: 0; z-index: 5; }
-.book:nth-child(2) { bottom: 55px; z-index: 4; }
-.book:nth-child(3) { bottom: 110px; z-index: 3; }
-.book:nth-child(4) { bottom: 165px; z-index: 2; }
-.book:nth-child(5) { bottom: 220px; z-index: 1; }
+/* Couleurs au survol selon la catégorie */
+.nav-link.nav-romans:hover,
+.nav-item-romans:hover > .nav-link {
+    color: var(--rouge-camus);
+    background: rgba(166, 58, 58, 0.15);
+}
 
-/* Tranche du livre */
-.book-spine {
+.nav-link.nav-essais:hover,
+.nav-item-essais:hover > .nav-link {
+    color: var(--bleu-camus);
+    background: rgba(44, 95, 124, 0.15);
+}
+
+.nav-link.nav-theatre:hover,
+.nav-item-theatre:hover > .nav-link {
+    color: var(--brun-camus);
+    background: rgba(107, 83, 68, 0.15);
+}
+
+.nav-link.nav-recueils:hover,
+.nav-item-recueils:hover > .nav-link {
+    color: var(--vert-camus);
+    background: rgba(90, 107, 74, 0.15);
+}
+
+.nav-link.nav-biographie:hover,
+.nav-item-biographie:hover > .nav-link {
+    color: var(--or-camus);
+    background: rgba(139, 115, 85, 0.15);
+}
+
+/* Titre "Œuvres Complètes" à droite */
+.nav-site-title {
+    color: var(--beige-camus);
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.7;
+    white-space: nowrap;
+}
+
+/* ============================================
+   MENUS DÉROULANTS (CSS ONLY via :hover)
+   ============================================ */
+
+.dropdown {
     position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: var(--noir-texte);
+    list-style: none;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    z-index: 998;
+    padding: 0.3rem 0;
+}
+
+/* Ligne colorée en haut du dropdown */
+.dropdown::before {
+    content: '';
+    display: block;
+    height: 3px;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent 10%, transparent 90%, rgba(0, 0, 0, 0.2));
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dropdown-romans::before { background: var(--rouge-camus); }
+.dropdown-essais::before { background: var(--bleu-camus); }
+.dropdown-theatre::before { background: var(--brun-camus); }
+.dropdown-recueils::before { background: var(--vert-camus); }
+.dropdown-biographie::before { background: var(--or-camus); }
+
+/* Affichage au hover */
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Items du dropdown */
+.dropdown li {
+    padding: 0;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 0.5rem 1.2rem;
+    color: var(--beige-camus);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-romans li a:hover { background: rgba(166, 58, 58, 0.15); border-left-color: var(--rouge-camus); color: var(--rouge-camus); }
+.dropdown-essais li a:hover { background: rgba(44, 95, 124, 0.15); border-left-color: var(--bleu-camus); color: var(--bleu-camus); }
+.dropdown-theatre li a:hover { background: rgba(107, 83, 68, 0.15); border-left-color: var(--brun-camus); color: var(--brun-camus); }
+.dropdown-recueils li a:hover { background: rgba(90, 107, 74, 0.15); border-left-color: var(--vert-camus); color: var(--vert-camus); }
+.dropdown-biographie li a:hover { background: rgba(139, 115, 85, 0.15); border-left-color: var(--or-camus); color: var(--or-camus); }
+
+/* ============================================
+   PAGE ACTIVE - INDICATEUR DANS LA NAV
+   ============================================ */
+
+.nav-link.active-romans { color: var(--rouge-camus); border-bottom: 2px solid var(--rouge-camus); }
+.nav-link.active-essais { color: var(--bleu-camus); border-bottom: 2px solid var(--bleu-camus); }
+.nav-link.active-theatre { color: var(--brun-camus); border-bottom: 2px solid var(--brun-camus); }
+.nav-link.active-recueils { color: var(--vert-camus); border-bottom: 2px solid var(--vert-camus); }
+.nav-link.active-biographie { color: var(--or-camus); border-bottom: 2px solid var(--or-camus); }
+
+/* ============================================
+   MARGES LATÉRALES COLORÉES PAR PAGE
+   ============================================ */
+
+body.page-accueil { border-left: 5px solid var(--or-camus); border-right: 5px solid var(--or-camus); }
+body.page-romans { border-left: 5px solid var(--rouge-camus); border-right: 5px solid var(--rouge-camus); }
+body.page-essais { border-left: 5px solid var(--bleu-camus); border-right: 5px solid var(--bleu-camus); }
+body.page-theatre { border-left: 5px solid var(--brun-camus); border-right: 5px solid var(--brun-camus); }
+body.page-oeuvres { border-left: 5px solid var(--vert-camus); border-right: 5px solid var(--vert-camus); }
+
+/* ============================================
+   PAGE D'ACCUEIL - HERO (citation)
+   ============================================ */
+
+.home-content {
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:
-            0 4px 6px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    padding: calc(var(--total-header) + 30px) 2rem 3rem;
 }
 
-/* Flèche à gauche de la barre */
-.book-spine::before {
-    content: '◀';
-    position: absolute;
-    left: 20px;
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
+.home-welcome {
+    text-align: center;
+    max-width: 700px;
 }
 
-.book:hover .book-spine::before {
-    left: 15px;
-    color: white;
-}
-
-.book-title {
+.home-quote {
     font-family: var(--font-title);
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 0.05em;
-}
-
-/* Couverture du livre qui s'ouvre à GAUCHE */
-.book-cover {
-    position: absolute;
-    width: 280px;
-    height: 280px;
-    top: 50%;
-    right: 100%;
-    transform: translate(0, -50%) rotateY(-90deg);
-    transform-origin: right center;
-    padding: 1.5rem;
-    border-radius: 8px;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.4);
-    transition: all 0.4s ease;
-    z-index: 100;
-    overflow-y: auto;
-}
-
-.book-cover h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--noir-texte);
+    line-height: 1.6;
     margin-bottom: 1rem;
-    color: white;
-    text-align: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 0.5rem;
+    padding: 1rem 2rem;
 }
 
-.book-cover ul {
-    list-style: none;
-    margin-top: 1rem;
+.home-quote::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--rouge-camus);
+    margin: 0 auto 1.5rem;
 }
 
-.book-cover li {
-    padding: 0.4rem 0;
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.2s ease;
+.home-quote-source {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 2rem;
 }
 
-.book-cover li:hover {
-    padding-left: 5px;
-    color: white;
+.home-invite {
+    font-size: 1.15rem;
+    color: var(--noir-texte);
+    opacity: 0.8;
 }
-
-.book-cover li:last-child {
-    border-bottom: none;
-}
-
-.book-cover p {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-/* Hover sur les livres */
-.book:hover {
-    transform: scale(1.02);
-    z-index: 200 !important;
-}
-
-.book:hover .book-cover {
-    transform: translate(0, -50%) rotateY(0deg);
-    opacity: 1;
-    pointer-events: all;
-    z-index: 200;
-}
-.book {
-    position: absolute;
-    width: 100%;
-    height: 60px;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transform-style: preserve-3d;
-    isolation: isolate; /* Crée un nouveau contexte d'empilement */
-}
-
-/* Couleurs spécifiques par catégorie */
-.book-roman .book-spine { background-color: var(--rouge-camus); }
-.book-roman .book-cover { background: linear-gradient(135deg, var(--rouge-camus), #8A2F2F); }
-
-.book-essai .book-spine { background-color: var(--bleu-camus); }
-.book-essai .book-cover { background: linear-gradient(135deg, var(--bleu-camus), #1E4152); }
-
-.book-theatre .book-spine { background-color: var(--brun-camus); }
-.book-theatre .book-cover { background: linear-gradient(135deg, var(--brun-camus), #4A3A2E); }
-
-.book-recueil .book-spine { background-color: var(--vert-camus); }
-.book-recueil .book-cover { background: linear-gradient(135deg, var(--vert-camus), #3E4A32); }
-
-.book-biographie .book-spine { background-color: #8B7355; }
-.book-biographie .book-cover { background: linear-gradient(135deg, #8B7355, #6B5344); }
 
 /* ============================================
-   SECTIONS DE CONTENU
+   CONTENU DES SECTIONS (wrapper)
    ============================================ */
 
 .content-wrapper {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: calc(var(--total-header) + 30px);
+    min-height: 100vh;
+}
+
+.content-inner {
     background: var(--blanc);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    padding: 2rem;
     margin-bottom: 3rem;
 }
+
+/* ============================================
+   TITRES DE SECTION
+   ============================================ */
 
 .section-title {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--noir-texte);
-    border-bottom: 3px solid var(--rouge-camus);
     padding-bottom: 1rem;
 }
 
-/* Romans */
-#romans-section .section-title {
-    color: var(--rouge-camus);
-    border-color: var(--rouge-camus);
-}
-
-/* Essais */
-#essais-section .section-title {
-    color: var(--bleu-camus);
-    border-color: var(--bleu-camus);
-}
-
-/* Théâtre */
-#theatre-section .section-title {
-    color: var(--brun-camus);
-    border-color: var(--brun-camus);
-}
-
-/* Recueils */
-#recueils-section .section-title {
-    color: var(--vert-camus);
-    border-color: var(--vert-camus);
-}
-
-/* Biographie */
-#biographie-section .section-title {
-    color: #8B7355;
-    border-color: #8B7355;
-}
+.section-title-romans { color: var(--rouge-camus); border-bottom: 3px solid var(--rouge-camus); }
+.section-title-essais { color: var(--bleu-camus); border-bottom: 3px solid var(--bleu-camus); }
+.section-title-theatre { color: var(--brun-camus); border-bottom: 3px solid var(--brun-camus); }
+.section-title-recueils { color: var(--vert-camus); border-bottom: 3px solid var(--vert-camus); }
+.section-title-biographie { color: var(--or-camus); border-bottom: 3px solid var(--or-camus); }
 
 /* ============================================
-   ARTICLES ET ŒUVRES
+   ARTICLES ET ŒUVRES (work-detail)
    ============================================ */
 
 .work-detail {
@@ -403,7 +391,7 @@ section.active-section {
     padding: 2rem;
     background: var(--gris-clair);
     border-radius: 8px;
-    border-left: 5px solid var(--rouge-camus);
+    border-left: 5px solid var(--or-camus);
     transition: all 0.3s ease;
 }
 
@@ -412,11 +400,12 @@ section.active-section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-#romans-section .work-detail { border-left-color: var(--rouge-camus); }
-#essais-section .work-detail { border-left-color: var(--bleu-camus); }
-#theatre-section .work-detail { border-left-color: var(--brun-camus); }
-#recueils-section .work-detail { border-left-color: var(--vert-camus); }
-#biographie-section .work-detail { border-left-color: #8B7355; }
+/* Bordure gauche par catégorie */
+.detail-romans { border-left-color: var(--rouge-camus); }
+.detail-essais { border-left-color: var(--bleu-camus); }
+.detail-theatre { border-left-color: var(--brun-camus); }
+.detail-recueils { border-left-color: var(--vert-camus); }
+.detail-biographie { border-left-color: var(--or-camus); }
 
 .work-detail h3 {
     font-size: 2rem;
@@ -456,7 +445,10 @@ section.active-section {
     font-weight: 600;
 }
 
-/* Sous-œuvres (pour les recueils avec plusieurs textes) */
+/* ============================================
+   SOUS-ŒUVRES (cycles, recueils, etc.)
+   ============================================ */
+
 .sub-work {
     margin: 1.5rem 0;
     padding: 1.5rem;
@@ -471,3 +463,296 @@ section.active-section {
     margin-bottom: 0.5rem;
 }
 
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background: var(--noir-texte);
+    color: var(--beige-camus);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-project {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-author {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact a {
+    color: var(--beige-camus);
+    text-decoration: underline;
+}
+
+.footer-contact a:hover {
+    color: var(--blanc);
+}
+
+/* Lien retour en haut */
+.retour-haut {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.2rem;
+    background: var(--noir-texte);
+    color: var(--beige-camus);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.retour-haut:hover {
+    background: #1a1a1a;
+    color: var(--blanc);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE - TABLETTE (max 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - TABLETTE PETITE (max 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+    :root {
+        --bandeau-height: 150px;
+        --total-header: 200px;
+    }
+
+    .bandeau-title {
+        font-size: 1.8rem;
+        left: 15px;
+    }
+
+    #main-nav {
+        top: 150px;
+        padding: 0 0.5rem;
+        height: auto;
+        min-height: var(--nav-height);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .nav-accueil {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .nav-site-title {
+        display: none;
+    }
+
+    .home-content {
+        padding-top: calc(var(--total-header) + 20px);
+        min-height: 50vh;
+    }
+
+    .home-quote {
+        font-size: 1.4rem;
+    }
+
+    .content-wrapper {
+        padding: 1.5rem 1rem;
+        padding-top: calc(var(--total-header) + 20px);
+    }
+
+    .content-inner {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .work-detail {
+        padding: 1.5rem;
+    }
+
+    .work-detail h3 {
+        font-size: 1.5rem;
+    }
+
+    .work-info {
+        font-size: 1rem;
+    }
+
+    .dropdown {
+        min-width: 180px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (max 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    :root {
+        --bandeau-height: 100px;
+        --total-header: 160px;
+    }
+
+    .bandeau-title {
+        font-size: 1.4rem;
+        left: 10px;
+    }
+
+    #main-nav {
+        top: 100px;
+        padding: 0.3rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .nav-accueil {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .home-content {
+        padding-top: calc(var(--total-header) + 15px);
+    }
+
+    .home-quote {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .content-wrapper {
+        padding: 0.5rem;
+        padding-top: calc(var(--total-header) + 15px);
+    }
+
+    .content-inner {
+        padding: 1rem;
+        margin: 0;
+        border-radius: 5px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .work-detail {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .work-detail h3 {
+        font-size: 1.3rem;
+    }
+
+    .work-info ul {
+        margin-left: 1.5rem;
+    }
+
+    .sub-work {
+        padding: 1rem;
+    }
+
+    .sub-work h4 {
+        font-size: 1.2rem;
+    }
+
+    .dropdown {
+        position: fixed;
+        left: 5%;
+        right: 5%;
+        min-width: auto;
+        width: 90%;
+    }
+}
+
+/* ============================================
+   ANIMATIONS CSS (sans JS)
+   ============================================ */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-wrapper,
+.home-content {
+    animation: fadeIn 0.5s ease;
+}
+
+.work-detail,
+.sub-work {
+    animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   ACCESSIBILITÉ
+   ============================================ */
+
+.nav-accueil:focus,
+.nav-link:focus,
+.dropdown li a:focus {
+    outline: 3px solid var(--rouge-camus);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--rouge-camus);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--rouge-camus);
+    color: white;
+}
+
+/* ============================================
+   IMPRESSION
+   ============================================ */
+
+@media print {
+    .bandeau-sticky, #main-nav, .retour-haut { display: none; }
+    .content-wrapper { padding-top: 0; }
+    body { border: none; }
+}
